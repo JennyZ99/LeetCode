@@ -1,15 +1,4 @@
 """
-TODO:
-  Based on the problem description - 'A completing word is a word that 
-  contains all the letters in licensePlate' - is the following a bug in the test case?
-
-Input
-"GrC8950"
-["measure","other","every","base","according","level","meeting","none","marriage","rest"]
-Output
-""
-Expected
-"according"
 
 time: O(n*m), where n is the number of words and m is the average length
 space: O(n*m), as for every word I create a dictionary, and each dictionary use O(m) space
@@ -52,5 +41,5 @@ class Solution:
         
         for key,val in dic_lp.items():
             if key not in dic_this: return False
-            elif val != dic_this[key]: return False
+            elif val < dic_this[key]: return False
         return True
