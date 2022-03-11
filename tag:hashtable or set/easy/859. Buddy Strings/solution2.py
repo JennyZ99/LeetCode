@@ -1,6 +1,13 @@
 """
 I use set instead of dictionary for this solution. The idea is the same as solution.py
 
+** note: we should note that in case that the two strings are buddies, and in the case that there are two unmatched letters:
+            -- the index_sum should be the same for the two letters;
+            -- the two sets with unmatched letters must be the same:
+                            -- ex. (a,b) <-> (b,a) are swappable
+                            -- ex. (a,a) <-> (b,b) are not swappable and not buddies
+                            -- both of the two examples have the same index_sum as 1 
+
 """
 
 
