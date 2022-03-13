@@ -5,6 +5,9 @@ space: O(n)
 time: O(n)
 
 data structure: dictionary and set
+
+** I like the solution from Taha Choura 
+-- https://leetcode.com/problems/x-of-a-kind-in-a-deck-of-cards/discuss/1836524/4-Lines-Python-Solution-oror-50-Faster-oror-Memory-less-than-60
 """
 
 class Solution:
