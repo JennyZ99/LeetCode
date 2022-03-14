@@ -1,5 +1,5 @@
 """
-time: O(n) where n is the size of arr
+time: O(nlgn) where n is the size of arr
 space: O(n)
 
 data structure:  dictionary, list
