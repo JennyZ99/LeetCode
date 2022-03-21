@@ -14,24 +14,35 @@ workflow:
         - If Yes, ths length of longest palindrome should be added by 1
         - If No, do nothing 
   I define the output variable - longest - to record the number of 'pair-wisable' letters.
+  
+In summary, this problem asks that me to build the longest palindrome with a set of letters. 
 
+data structure: dictionary
+
+Once the number of letters are even, the letters can form a palindrome. ex. "aabb" -> "abba"
+However, I also should consider the case when there exists odd number letter. ex. "aabbb" -> "abbba"
+                    Hence, I use
+                            -- a dictionary: char -> frequency pair
+                            
+                    ,and I calculate the longest length with the frequency 
 """
+
 class Solution:
     def longestPalindrome(self, s: str) -> int:
         dic = {}
         longest = 0
         odd = False
-        for val in s:
-            if val not in dic:
-                dic[val]=1
+        for char in s:
+            if char not in dic:
+                dic[char]=1
             else:
-                dic[val]=dic[val]+1
-        for key in dic:
-            this_val = dic[key]
-            if this_val%2==0:
-                longest += this_val
+                dic[char]=dic[char]+1
+        for char in dic:
+            freq = dic[char]
+            if freq%2==0:
+                longest += freq
             else:
-                longest += (this_val-1)
+                longest += (freq-1)
                 odd = True
         if odd: return longest+1
         return longest
